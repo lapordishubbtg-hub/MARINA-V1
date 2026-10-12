@@ -1625,3 +1625,17 @@ tbody tr:hover {
   color: var(--primary);
   flex-shrink: 0;
 }
+.priority-pill.ringan {
+  background: #16a34a;
+  color: #ffffff;
+}
+
+.priority-pill.sedang {
+  background: #f59e0b;
+  color: #ffffff;
+}
+
+.priority-pill.berat {
+  background: #dc2626;
+  color: #ffffff;
+}
