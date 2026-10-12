@@ -162,6 +162,13 @@ function normalize(value) {
   return String(value || "").toLowerCase().trim();
 }
 
+function normalizePrioritasClient(value) {
+  const v = normalize(value);
+  if (v === "berat" || v === "darurat") return "Berat";
+  if (v === "sedang" || v === "tinggi") return "Sedang";
+  return "Ringan"; // kompatibel dengan data lama yang kosong/Normal
+}
+
 /* =========================
    INIT
 ========================= */
@@ -443,7 +450,7 @@ function renderDashboard(data) {
   setText("statDiverifikasi", rekap.diverifikasi);
   setText("statDiproses", rekap.diproses);
   setText("statSelesai", rekap.selesai);
-  setText("statDarurat", rekap.darurat);
+  setText("statBerat", rekap.berat);
 
   renderCharts(data);
 }
@@ -456,7 +463,7 @@ function buildStats(data) {
     diproses: data.filter(x => x.status === "Diproses").length,
     selesai: data.filter(x => x.status === "Selesai").length,
     ditolak: data.filter(x => x.status === "Ditolak").length,
-    darurat: data.filter(x => x.prioritas === "Darurat").length
+    berat: data.filter(x => normalizePrioritasClient(x.prioritas) === "Berat").length
   };
 }
 
@@ -680,7 +687,7 @@ function renderTrackingResult(report, history) {
     <div class="tracking-summary-grid">
       <div><small>Judul</small><strong>${escapeHtml(report.judul || "-")}</strong></div>
       <div><small>Kategori</small><strong>${escapeHtml(report.kategori || "-")}</strong></div>
-      <div><small>Prioritas</small><strong>${escapeHtml(report.prioritas || "Normal")}</strong></div>
+      <div><small>Prioritas</small><strong>${escapeHtml(normalizePrioritasClient(report.prioritas))}</strong></div>
       <div><small>Update Terakhir</small><strong>${escapeHtml(formatDateTime(report.updatedAt || report.createdAt))}</strong></div>
     </div>
     <div class="tracking-note">
@@ -816,7 +823,7 @@ function renderAdminDashboard() {
   setText("adminDiverifikasi", stats.diverifikasi);
   setText("adminDiproses", stats.diproses);
   setText("adminSelesai", stats.selesai);
-  setText("adminDarurat", stats.darurat);
+  setText("adminBerat", stats.berat);
 
   const recent = [...ADMIN_REPORTS].slice(0, 7);
   const tbody = $("adminRecentBody");
@@ -907,8 +914,8 @@ function statusBadge(status) {
 }
 
 function priorityBadge(prioritas) {
-  const cls = normalize(prioritas).replace(/\s+/g, "-") || "normal";
-  return `<span class="priority-pill ${cls}">${escapeHtml(prioritas || "Normal")}</span>`;
+  const cls = normalize(normalizePrioritasClient(prioritas)).replace(/\s+/g, "-") || "ringan";
+  return `<span class="priority-pill ${cls}">${escapeHtml(normalizePrioritasClient(prioritas))}</span>`;
 }
 
 function openDetail(id) {
