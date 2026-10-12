@@ -1529,3 +1529,97 @@ tbody tr:hover {
     max-width: none;
   }
 }
+```css
+/* KLASIFIKASI PRIORITAS ADUAN */
+.priority-info > i {
+  background: #fff7ed;
+  color: #ea580c;
+}
+
+.priority-intro {
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.6;
+  margin: -4px 0 16px;
+}
+
+.priority-guide {
+  display: grid;
+  gap: 12px;
+}
+
+.priority-item {
+  padding: 14px;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  border-left: 4px solid;
+}
+
+.priority-item.ringan {
+  background: #f0fdf4;
+  border-left-color: #16a34a;
+}
+
+.priority-item.sedang {
+  background: #fffbeb;
+  border-left-color: #d97706;
+}
+
+.priority-item.berat {
+  background: #fef2f2;
+  border-left-color: #dc2626;
+}
+
+.priority-label {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 14px;
+  font-weight: 900;
+  margin-bottom: 8px;
+}
+
+.ringan .priority-label {
+  color: #15803d;
+}
+
+.sedang .priority-label {
+  color: #b45309;
+}
+
+.berat .priority-label {
+  color: #b91c1c;
+}
+
+.priority-item p {
+  color: #334155;
+  font-size: 13px;
+  line-height: 1.6;
+  margin-bottom: 7px;
+}
+
+.priority-item small {
+  display: block;
+  color: #64748b;
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+.priority-note {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  margin-top: 16px;
+  padding: 12px;
+  border-radius: 10px;
+  background: #f1f5f9;
+  color: #475569;
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+.priority-note i {
+  margin-top: 3px;
+  color: var(--primary);
+}
+
