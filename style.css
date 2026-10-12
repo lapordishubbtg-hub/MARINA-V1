@@ -1529,11 +1529,12 @@ tbody tr:hover {
     max-width: none;
   }
 }
-```css
-/* KLASIFIKASI PRIORITAS ADUAN */
+
+
+/* KLASIFIKASI PRIORITAS - TEMA MARINA */
 .priority-info > i {
-  background: #fff7ed;
-  color: #ea580c;
+  background: #ecfeff;
+  color: var(--primary);
 }
 
 .priority-intro {
@@ -1552,22 +1553,23 @@ tbody tr:hover {
   padding: 14px;
   border-radius: 12px;
   border: 1px solid var(--border);
-  border-left: 4px solid;
+  border-left: 4px solid var(--primary);
+  background: #ffffff;
 }
 
 .priority-item.ringan {
-  background: #f0fdf4;
-  border-left-color: #16a34a;
+  border-left-color: #0f766e;
+  background: #f0fdfa;
 }
 
 .priority-item.sedang {
-  background: #fffbeb;
-  border-left-color: #d97706;
+  border-left-color: #0ea5e9;
+  background: #f0f9ff;
 }
 
 .priority-item.berat {
-  background: #fef2f2;
-  border-left-color: #dc2626;
+  border-left-color: #f97316;
+  background: #fff7ed;
 }
 
 .priority-label {
@@ -1580,19 +1582,19 @@ tbody tr:hover {
 }
 
 .ringan .priority-label {
-  color: #15803d;
+  color: #0f766e;
 }
 
 .sedang .priority-label {
-  color: #b45309;
+  color: #0284c7;
 }
 
 .berat .priority-label {
-  color: #b91c1c;
+  color: #c2410c;
 }
 
 .priority-item p {
-  color: #334155;
+  color: var(--text);
   font-size: 13px;
   line-height: 1.6;
   margin-bottom: 7px;
@@ -1600,7 +1602,7 @@ tbody tr:hover {
 
 .priority-item small {
   display: block;
-  color: #64748b;
+  color: var(--muted);
   font-size: 12px;
   line-height: 1.5;
 }
@@ -1612,8 +1614,8 @@ tbody tr:hover {
   margin-top: 16px;
   padding: 12px;
   border-radius: 10px;
-  background: #f1f5f9;
-  color: #475569;
+  background: #ecfeff;
+  color: #334155;
   font-size: 12px;
   line-height: 1.6;
 }
@@ -1621,5 +1623,5 @@ tbody tr:hover {
 .priority-note i {
   margin-top: 3px;
   color: var(--primary);
+  flex-shrink: 0;
 }
-
