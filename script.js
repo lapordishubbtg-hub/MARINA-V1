@@ -3,7 +3,7 @@
    Monitoring Aduan Rambu, Infrastruktur, dan Akses Jalan
 ===================================================== */
 
-const API_URL = "https://script.google.com/macros/s/AKfycbzeeFSmdExRN0vGB2LF9gvK9uqgSF5kp91WalyGnezLYoYA32Fb8LiSrWm2fM3dZU7fyg/exec";
+const API_URL = "https://script.google.com/macros/s/AKfycbxn82OV1Lf8GOuLc8efkhVyKj1O_z-iQEu-62kGaGYbQh_Zol9UtWSnN6oyOYpOD00p7g/exec";
 const MAP_CENTER = [-5.5574, 119.9500];
 const MAP_ZOOM = 11;
 const MAX_FILE_SIZE_MB = 5;
